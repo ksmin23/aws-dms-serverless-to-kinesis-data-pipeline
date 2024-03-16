@@ -79,7 +79,7 @@ Now you can deploy the CloudFormation template for this code.
 (.venv) $ export CDK_DEFAULT_ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
 (.venv) $ export CDK_DEFAULT_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)
 (.venv) $ cdk list
-DMSAuroraMysqlToS3VPCStack
+DMSAuroraMysqlToKDSVPCStack
 AuroraMysqlStack
 AuroraMysqlBastionHost
 DMSTargetKinesisDataStreamStack
@@ -98,7 +98,7 @@ We can provision each CDK stack shown above one at a time like this:
 ## Create Aurora MySQL cluster
 
   <pre>
-  (.venv) $ cdk deploy DMSAuroraMysqlToS3VPCStack AuroraMysqlStack AuroraMysqlBastionHost
+  (.venv) $ cdk deploy DMSAuroraMysqlToKDSVPCStack AuroraMysqlStack AuroraMysqlBastionHost
   </pre>
 
 ## Confirm that binary logging is enabled
@@ -239,7 +239,7 @@ Secrets Manager displays the current version (`AWSCURRENT`) of the secret. To se
 
   Now let's create a migration task.
   <pre>
-  (.venv) $ cdk deploy DMSRequiredIAMRolesStack DMSServerlessAuroraMysqlToS3Stack
+  (.venv) $ cdk deploy DMSRequiredIAMRolesStack DMSServerlessAuroraMysqlToKDSStack
   </pre>
 
 ## Run Test

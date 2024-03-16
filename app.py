@@ -23,7 +23,7 @@ APP_ENV = cdk.Environment(
 
 app = cdk.App()
 
-vpc_stack = VpcStack(app, 'DMSAuroraMysqlToS3VPCStack',
+vpc_stack = VpcStack(app, 'DMSAuroraMysqlToKDSVPCStack',
   env=APP_ENV
 )
 
